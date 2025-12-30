@@ -566,7 +566,7 @@
             </div>
             <strong>Gaming</strong>
         </div>
-          <div style="box-shadow:inset 5px 5px 10px var(--primary);background:var(--bg)" class="column justify-center br-10 w-full perfect-square g-10 align-center">
+          <div onclick="window.location.href='{{ url('users/forex') }}'" style="box-shadow:inset 5px 5px 10px var(--primary);background:var(--bg)" class="column justify-center br-10 w-full perfect-square g-10 align-center">
           <div class="h-40 c-primary w-40 circle bg-light column justify-center">
            <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
 <path d="M22 5C22 6.65685 20.6569 8 19 8C17.3431 8 16 6.65685 16 5C16 3.34315 17.3431 2 19 2C20.6569 2 22 3.34315 22 5Z" fill="CurrentColor"></path>

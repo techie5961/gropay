@@ -384,10 +384,14 @@ class UsersDashboardController extends Controller
     public function WithdrawalPin(){
         return view('users.withdrawal_pin');
     }
+    // ball game
     public function BallGame(){
         return view('users.ball_game.index'); 
     }
-    
+// forex
+public function Forex(){
+    return view('users.forex');
+}
     
 
 }
