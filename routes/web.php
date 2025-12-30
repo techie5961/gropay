@@ -123,6 +123,9 @@ Route::prefix('users')->group(function(){
     Route::get('withdrawal/pin',[
         UsersDashboardController::class,'WithdrawalPin'
     ]);
+     Route::get('forex',[
+        UsersDashboardController::class,'Forex'
+    ]);
     
 
 
@@ -158,9 +161,7 @@ Route::prefix('users')->group(function(){
     Route::get('color/game/play/process',[
         UsersGetRequestController::class,'ColorGame'
     ]);
-    Route::get('forex',[
-        UsersDashboardController::class,'Forex'
-    ]);
+   
    });
 
     // prefix post
