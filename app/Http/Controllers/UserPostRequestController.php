@@ -227,6 +227,12 @@ class UserPostRequestController extends Controller
     }
     // withdraw
     public function Withdraw(){
+        if(Auth::guard('users')->user()->status !== 'active'){
+            return response()->json([
+                'message' => 'Withdrawal not allowed,your account has been banned',
+                'status' => 'error'
+            ]);
+        }
          $pkg=json_decode(Auth::guard('users')->user()->package);
         $finance=json_decode(DB::table('settings')->where('key','finance_settings')->first()->json ?? '{}');
     if(request('wallet') == ''){
@@ -241,7 +247,7 @@ class UserPostRequestController extends Controller
 
     }else{
          $minimum_withdrawal= $pkg->minimum_withdrawal ?? DB::table('packages')->where('id',$pkg->id)->first()->minimum_withdrawal ?? $finance->wallets->activities->minimum;
-     $maximum_withdrawal=$pkg->maximum_withdrawal ?? DB::table('packages')->where('id',$pkg->id)->first()->maximum_withdrawal ?? 100000000;
+    //  $maximum_withdrawal=$pkg->maximum_withdrawal ?? DB::table('packages')->where('id',$pkg->id)->first()->maximum_withdrawal ?? 100000000;
 
     }
         $uniqid=strtoupper(uniqid('TRX'));
@@ -264,12 +270,12 @@ class UserPostRequestController extends Controller
             'status' => 'error'
         ]);
       }
-         if(request()->input('amount') > $maximum_withdrawal){
-        return response()->json([
-            'message' => 'Maximum withdrawal for '.$pkg->name.' users is '.Currency(Auth::guard('users')->user()->id).''.number_format($maximum_withdrawal,2).'',
-            'status' => 'error'
-        ]);
-      }
+    //      if(request()->input('amount') > $maximum_withdrawal){
+    //     return response()->json([
+    //         'message' => 'Maximum withdrawal for '.$pkg->name.' users is '.Currency(Auth::guard('users')->user()->id).''.number_format($maximum_withdrawal,2).'',
+    //         'status' => 'error'
+    //     ]);
+    //   }
       if(($finance->wallets->{str_replace('_balance','',request()->input('wallet'))}->portal ?? json_decode(DB::table('settings')->where('key','finance_settings')->first()->json)->wallets->games->portal) == 'closed'){
         return response()->json([
             'message' => ''.ucfirst(str_replace('_balance','',request()->input('wallet'))).' withdrawal portal is currently closed,check back later',
