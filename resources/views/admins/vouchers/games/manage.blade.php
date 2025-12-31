@@ -1,6 +1,6 @@
 @extends('layout.admins.app')
 @section('title')
-    Manage Coupons
+    Manage Deposit Vouchers
 @endsection
 @section('main')
     <section class="grid pc-grid-2 w-full g-10 p-10">
@@ -43,7 +43,7 @@
                 'text' => 'No Vouchers found'
             ])
         @else
-        <strong class="desc grid-full c-bg-secondary">Games Vouchers</strong>
+        <strong class="desc grid-full c-bg-secondary">Deposit Vouchers</strong>
           @foreach ($vouchers as $data)
               <div class="bg-white w-full br-10 box-shadow p-10 column g-5">
                 <div class="row w-full space-between g-10">

@@ -195,6 +195,30 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
                             <a class="p-10 w-full row g-5 no-u c-black" href="{{ url('admins/coupons/redeemed') }}">Redeemed Codes</a>
                       </div>
                 </div>
+                <div class="nav-group w-full column">
+                     <a onclick="
+                     let child=this.closest('.nav-group').querySelector('.nav-child');
+                     if(child.classList.contains('display-none')){
+                        child.classList.remove('display-none');
+                        this.closest('.nav-group').querySelector('.main-a .chevron').classList.add('rotate-90');
+
+                     }else{
+                     child.classList.add('display-none');
+                     this.closest('.nav-group').querySelector('.main-a .chevron').classList.remove('rotate-90');
+
+                    }
+                     " class="p-10 w-full main-a row g-5 no-u c-black" >
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="CurrentColor" height="20" width="20"><path d="M208,40H48A24,24,0,0,0,24,64V176a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V64A24,24,0,0,0,208,40Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8H208a8,8,0,0,1,8,8Zm-48,48a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,224ZM157.66,106.34a8,8,0,0,1-11.32,11.32L136,107.31V152a8,8,0,0,1-16,0V107.31l-10.34,10.35a8,8,0,0,1-11.32-11.32l24-24a8,8,0,0,1,11.32,0Z"></path></svg>
+                 Deposit Vouchers
+                      <svg class="m-left-auto chevron transition-ease-half" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="CurrentColor" viewBox="0 0 256 256"><path d="M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z"></path></svg>
+                      </a> 
+                      <div style="width:calc(100% - 10px)" class="nav-child display-none m-left-10 border-left-4 border-color-bg bg-primary-transparent w-full column">
+                        <a class="p-10 w-full row g-5 no-u c-black" href="{{ url('admins/vouchers/add') }}">Add New</a>
+                          <a class="p-10 w-full row g-5 no-u c-black" href="{{ url('admins/vouchers/all') }}">All Vouchers</a>
+                            <a class="p-10 w-full row g-5 no-u c-black" href="{{ url('admins/vouchers/active') }}">Active Vouchers</a>
+                            <a class="p-10 w-full row g-5 no-u c-black" href="{{ url('admins/vouchers/redeemed') }}">Redeemed Vouchers</a>
+                      </div>
+                </div>
                    <div class="nav-group display-none w-full column">
                      <a onclick="
                      let child=this.closest('.nav-group').querySelector('.nav-child');

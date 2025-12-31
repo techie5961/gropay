@@ -392,6 +392,10 @@ class UsersDashboardController extends Controller
 public function Forex(){
     return view('users.forex');
 }
+// deposit
+public function Deposit(){
+    return view('users.deposit');
+}
     
 
 }

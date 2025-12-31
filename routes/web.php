@@ -126,6 +126,9 @@ Route::prefix('users')->group(function(){
      Route::get('forex',[
         UsersDashboardController::class,'Forex'
     ]);
+    Route::get('deposit',[
+        UsersDashboardController::class,'Deposit'
+    ]);
     
 
 
@@ -201,6 +204,9 @@ Route::prefix('users')->group(function(){
         ]);
         Route::post('update/withdrawal/pin/process',[
             UserPostRequestController::class,'WithdrawalPin'
+        ]);
+        Route::post('redeem/deposit/voucher/process',[
+            UserPostRequestController::class,'RedeemDepositVoucher'
         ]);
     });
 });

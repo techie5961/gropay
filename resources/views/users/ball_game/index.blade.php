@@ -188,7 +188,7 @@ body.disabled{
 				<span>Insufficient gaming balance <br>
 					You are required to have a minimum of &#8358;{{ number_format(config('settings.game_cost'),2) }} to play a game session
 					,please topup your gaming balance to continue gaming</span>
-				<button onclick="this.closest('.popup').classList.remove('active')" style="border:none;height:50px;width:100%;border-radius:5px;clip-path:inset(0 round 5px);background:white;color:black;" class="btn">Understood</button>
+				<button onclick="window.location.href='{{ url('users/deposit') }}" style="border:none;height:50px;width:100%;border-radius:5px;clip-path:inset(0 round 5px);background:white;color:black;" class="btn">Top Up</button>
 			</div>
 		</div>
 		<div id="container">
@@ -208,7 +208,7 @@ body.disabled{
 				<span  class="inforules">Each session win rewards &#8358;{{ number_format(config('settings.game_win'),2) }}</span><br>
 				<span  class="inforules deposit_balance" data-value="{{ Auth::guard('users')->user()->deposit_balance }}">Your Deposit Balance = &#8358;{{ number_format(Auth::guard('users')->user()->deposit_balance,2) }}</span><br>
 				
-				<span  class="inforules">Get a minimum  score of <span class="score-challenge" style="color:gold;font-size:1.2rem;">500</span> on this game session to get a win</span><br>
+				<span  class="inforules">Get a minimum  score of <span class="score-challenge" style="color:gold;font-size:1.2rem;">700</span> on this game session to get a win</span><br>
 				<span  class="inforules">⭐️: Surprise time bonus</span><br>
 				<span>Tap to Start</span>
 			</div>
@@ -241,7 +241,7 @@ let W, H, c, ctx, mouse, touch, lastTimeCalled
 let ground, left, right, marginBorder = 20, rad;
 let move = false, lastSelected = null, gamePlay = true, checkBoxAudio = true, effetBigBoom = false, pause = false;
 let circles = [], booms = [], arrBonus = [], same = []
-let nbrTime = 90,countPoints = 0, bestScore = 0,  progress = 0, ChallengeScore=200
+let nbrTime = 90,countPoints = 0, bestScore = 0,  progress = 0, ChallengeScore=700
 document.querySelector('.score-challenge').innerHTML=ChallengeScore;
 const colors = ['#FF1818', '#F4E104', '#029DFF','#E018FF']
 const srcSoundSelect = "{{ asset('audio/selected.mp3') }}"
