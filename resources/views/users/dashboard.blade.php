@@ -271,12 +271,12 @@
 @section('main')
     <section class="column p-10 w-full g-10">
      <div class="w-full g-5 column">
-       <div onclick="
+        <div onclick="
       
-        this.outerHTML=document.querySelector('template.affiliate-wallet').innerHTML;
+        this.outerHTML=document.querySelector('template.deposit-wallet').innerHTML;
       
         " class="pos-relative balance-houses w-full">
-        <div class="w-full br-10  p-20 column no-select g-10 balance-divs deposit-balance-div">
+        <div class="w-full br-10  p-20 column no-select g-10 balance-divs all-time-balance-div">
         <div class="column w-full content g-10">
                  <div class="row g-10">
                      <img onclick="spa(event,'{{ url('users/more') }}')" src="{{ asset('users/'.Auth::guard('users')->user()->photo.'') }}" alt="" class="h-40 font-weight-900 desc w-40 circle no-shrink bg-dim column justify-center">        
@@ -294,8 +294,8 @@
            </div>
         </div>
         <div class="column balance-display balance-shown g-5 m-top-auto">
-            <span class="balance-name">Deposit/Gaming Wallet</span>
-            <strong style="font-size:2rem;" class="desc balance">{{ Currency(Auth::guard('users')->user()->id) }}{{ number_format(Auth::guard('users')->user()->deposit_balance,2) }}</strong>
+            <span class="balance-name">All Time Earnings</span>
+            <strong style="font-size:2rem;" class="desc balance">{{ Currency(Auth::guard('users')->user()->id) }}{{ number_format($all_time,2) }}</strong>
              <strong style="font-size:2rem;" class="desc star">******</strong>
             <div onclick="
             event.stopPropagation();
@@ -326,19 +326,20 @@
 
             </div>
         </div>
-        <span class=" m-top-20 " style="opacity:0.7">Your balance used in playing games on the platform</span>
+        <span class=" m-top-20 " style="opacity:0.7">Your total earnings on the platform</span>
         <div class="align-center row g-10">
-            <div onclick="spa(event,'{{ url('users/deposit') }}')" style="background:var(--color);color:var(--bg);box-shadow:0 0 10px var(--color);font-weight:900;" class="w-fit p-5 p-x-20 br-1000">Add Funds</div>
+            <div style="background:var(--color);color:var(--bg);box-shadow:0 0 10px var(--color);font-weight:900;" class="w-fit p-5 p-x-20 br-1000">View Breakdown</div>
             </div>
         </div>
 
-        <img style="right:10%;" src="{{ asset('images/IMG_2197.png') }}" class="rep-img" alt="">
+        <img style="right:10%;" src="{{ asset('images/IMG_1481.PNG') }}" class="rep-img" alt="">
        </div>
 {{-- WALLETS --}}
-       <div style="background:blue" class="wallets activities"></div>
-     <div style="background:red" class="wallets all_time"></div>
-     <div style="background:yellow" class="wallets deposit"></div>
+       <div style="background:white" class="wallets activities"></div>
+     <div style="background:rgb(0, 0, 255)" class="wallets all_time"></div>
+     <div style="background:red" class="wallets deposit"></div>
        </div>
+
 
 
        {{-- TEMPLATES --}}

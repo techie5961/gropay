@@ -188,7 +188,7 @@ body.disabled{
 				<span>Insufficient gaming balance <br>
 					You are required to have a minimum of &#8358;{{ number_format(config('settings.game_cost'),2) }} to play a game session
 					,please topup your gaming balance to continue gaming</span>
-				<button onclick="window.location.href='{{ url('users/deposit') }}" style="border:none;height:50px;width:100%;border-radius:5px;clip-path:inset(0 round 5px);background:white;color:black;" class="btn">Top Up</button>
+				<button onclick="window.location.href='{{ url('users/deposit') }}'" style="border:none;height:50px;width:100%;border-radius:5px;clip-path:inset(0 round 5px);background:white;color:black;" class="btn">Top Up</button>
 			</div>
 		</div>
 		<div id="container">
