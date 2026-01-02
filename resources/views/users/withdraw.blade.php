@@ -158,7 +158,7 @@
                      }" oninput="if((this.value).length == 1){
                     this.closest('.row').querySelector('.pin-4').focus();
                     
-                    }" type="text" inputmode="numeric" placeholder="*" maxlength="1" class="inp pin-3 text-center bold input required w-full h-full border-none bg-transparent">
+                    }" type="password" inputmode="numeric" placeholder="*" maxlength="1" class="inp pin-3 text-center bold input required w-full h-full border-none bg-transparent">
                 </div>
                 <div style="border:1px solid var(--bg-lighter)" class="cont h-50 w-50 bg-light">
                      <input name="pin-4" onkeydown="if(event.key == 'Backspace' || event.key == 'Delete'){

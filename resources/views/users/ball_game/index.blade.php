@@ -241,7 +241,7 @@ let W, H, c, ctx, mouse, touch, lastTimeCalled
 let ground, left, right, marginBorder = 20, rad;
 let move = false, lastSelected = null, gamePlay = true, checkBoxAudio = true, effetBigBoom = false, pause = false;
 let circles = [], booms = [], arrBonus = [], same = []
-let nbrTime = 90,countPoints = 0, bestScore = 0,  progress = 0, ChallengeScore=700
+let nbrTime = 90,countPoints = 0, bestScore = 0,  progress = 0, ChallengeScore=150
 document.querySelector('.score-challenge').innerHTML=ChallengeScore;
 const colors = ['#FF1818', '#F4E104', '#029DFF','#E018FF']
 const srcSoundSelect = "{{ asset('audio/selected.mp3') }}"

@@ -245,7 +245,12 @@
         <p class="subtitle">Real-time forex analysis powered by TradingView</p>
       </div>
       
+     <div style="display:flex;flex-direction:column;width:100%;">
+        <button onclick="window.open('https://chat.whatsapp.com/Lb6S8zO9wKl2wtzVLQ98Cx')" style="background:#4caf50;box-shadow:0 4px 12px rgba(76, 175, 80,0.3)" class="action-button start-trading-btn">
+         Join the Forex Trading Group
+        </button>
       <div class="button-container">
+        
         <button class="action-button go-back-btn" id="goBackBtn">
           Go Back
         </button>
@@ -253,6 +258,7 @@
           Start Trading
         </button>
       </div>
+     </div>
       
       <div class="dropdown-container">
         <label class="dropdown-label">Select Currency Pair</label>

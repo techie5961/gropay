@@ -64,7 +64,7 @@
                      }" type="text" inputmode="numeric" placeholder="*" maxlength="1" class="inp pin-4 text-center bold input required w-full h-full border-none bg-transparent">
                 </div>
              </div>
-               <span>Re-Enter New Withdrawal Pin</span>
+               <span>Re-Enter New Withdrawal Pin</span> 
                 <div class="row align-center w-full g-10  place-center">
                 <div style="border:1px solid var(--bg-lighter)" class="cont h-50 w-50 bg-light">
                     <input name="confirm-pin-1" oninput="if((this.value).length == 1){
